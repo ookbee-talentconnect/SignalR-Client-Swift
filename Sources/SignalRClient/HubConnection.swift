@@ -485,8 +485,8 @@ public class HubConnection {
                     self.logger.log(logLevel: .error, message: "Keep alive Error recevied \(error.localizedDescription)")
                 } else {
                     self.logger.log(logLevel: .debug, message: "Keep alive - Still alive")
+                 self.resetKeepAlive()
                 }
-                self.resetKeepAlive()
             })
         } catch {
             // We don't care about the error. It should be seen elsewhere in the client.
